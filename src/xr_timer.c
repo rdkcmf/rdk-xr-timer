@@ -343,6 +343,8 @@ void rdkx_timer_list_add(rdkx_timer_obj_t *obj, rdkx_timer_id_t timer_id) {
             entry->next = next;
             if(prev != NULL) {
                prev->next = entry;
+            } else {
+               obj->list_head = entry;
             }
             break;
          }
